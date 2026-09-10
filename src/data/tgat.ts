@@ -7,7 +7,7 @@ export const tgatData: Record<string, TgatData> = {
     subjectName: 'การสื่อสารภาษาอังกฤษ',
     setNumber: '04',
     questionCount: '60 ข้อ',
-    duration: '10 วินาที (Mockup)',
+    duration: '5 นาที 12 วินาที',
     video: '/videos/tgat-1.mp4',
     poster: '',
     shopUrl: 'https://shopee.co.th/',
