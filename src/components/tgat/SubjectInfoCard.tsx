@@ -26,7 +26,7 @@ export default function SubjectInfoCard({
         <div className="flex items-start">
           <FileText className="w-5 h-5 mr-4 text-[#1e3a8a] flex-shrink-0 mt-0.5" />
           <div className="flex flex-1">
-            <span className="w-20 sm:w-24 flex-shrink-0 font-medium">รายวิชา</span>
+            <span className="w-20 sm:w-24 flex-shrink-0  font-bold">รายวิชา</span>
             <span className="mr-3">:</span>
             <span>{title} {subjectName}</span>
           </div>
@@ -35,7 +35,7 @@ export default function SubjectInfoCard({
         <div className="flex items-start">
           <ClipboardList className="w-5 h-5 mr-4 text-[#1e3a8a] flex-shrink-0 mt-0.5" />
           <div className="flex flex-1">
-            <span className="w-20 sm:w-24 flex-shrink-0 font-medium">ลำดับชุด</span>
+            <span className="w-20 sm:w-24 flex-shrink-0 font-bold">ลำดับชุด</span>
             <span className="mr-3">:</span>
             <span>{setNumber}</span>
           </div>
@@ -44,7 +44,7 @@ export default function SubjectInfoCard({
         <div className="flex items-start">
           <BarChart2 className="w-5 h-5 mr-4 text-[#1e3a8a] flex-shrink-0 mt-0.5" />
           <div className="flex flex-1">
-            <span className="w-20 sm:w-24 flex-shrink-0 font-medium">จำนวนข้อ</span>
+            <span className="w-20 sm:w-24 flex-shrink-0 font-bold">จำนวนข้อ</span>
             <span className="mr-3">:</span>
             <span>{questionCount}</span>
           </div>
@@ -53,7 +53,7 @@ export default function SubjectInfoCard({
         <div className="flex items-start">
           <Clock className="w-5 h-5 mr-4 text-[#1e3a8a] flex-shrink-0 mt-0.5" />
           <div className="flex flex-1">
-            <span className="w-20 sm:w-24 flex-shrink-0 font-medium">ความยาว</span>
+            <span className="w-20 sm:w-24 flex-shrink-0 font-bold">ความยาว</span>
             <span className="mr-3">:</span>
             <span>{duration}</span>
           </div>
