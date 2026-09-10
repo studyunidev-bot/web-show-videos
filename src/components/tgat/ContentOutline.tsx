@@ -49,7 +49,7 @@ export default function ContentOutline({ sections, activeTimestamp, onChapterCli
                         {/* Dot */}
                         <div className={`absolute left-[5.5px] top-[13px] w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#1e3a8a] ring-4 ring-[#d1e3ff]' : 'bg-[#1e3a8a]'
                           }`}></div>
-
+                        {/* xxxx */}
                         <div className={`flex flex-wrap ${isActive ? 'text-[#1e3a8a]' : 'text-[#334155]'}`}>
                           <span className="w-[80px] sm:w-[80px] text-sm flex-shrink-0 font-bold">{item.label}</span>
                           <span className="mx-2">:</span>
