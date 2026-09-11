@@ -42,3 +42,5 @@ next-env.d.ts
 
 # Video assets (hosted on VPS)
 public/videos/tgat-*
+
+# xxx
