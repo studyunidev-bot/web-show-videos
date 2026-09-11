@@ -2,6 +2,7 @@ export interface TgatSectionItem {
   label: string;
   description: string;
   timestamp: number;
+  videoUrl?: string;
 }
 
 export interface TgatSection {

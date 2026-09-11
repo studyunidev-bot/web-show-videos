@@ -1,24 +1,37 @@
 'use client';
 
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 
 interface VideoPlayerProps {
   src: string;
   poster: string;
   onTimeUpdate?: (e: React.SyntheticEvent<HTMLVideoElement, Event>) => void;
+  onEnded?: () => void;
 }
 
 const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
-  ({ src, poster, onTimeUpdate }, ref) => {
+  ({ src, poster, onTimeUpdate, onEnded }, ref) => {
+    
+    // Auto-reload video when src changes and ref is available
+    useEffect(() => {
+      if (ref && typeof ref !== 'function' && ref.current) {
+        ref.current.load();
+        ref.current.play().catch(e => console.log('Autoplay prevented:', e));
+      }
+    }, [src, ref]);
+
     return (
       <div className="w-full aspect-video bg-black rounded-md overflow-hidden shadow-sm relative group">
         <video
           ref={ref}
           controls
+          controlsList="nodownload"
+          onContextMenu={(e) => e.preventDefault()}
           playsInline
           preload="metadata"
           poster={poster}
           onTimeUpdate={onTimeUpdate}
+          onEnded={onEnded}
           className="w-full h-full object-contain bg-black"
           onError={(e) => {
             const target = e.target as HTMLVideoElement;
