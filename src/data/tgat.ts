@@ -9,8 +9,8 @@ export const tgatData: Record<string, TgatData> = {
     subjectName: 'การสื่อสารภาษาอังกฤษ',
     setNumber: '04',
     questionCount: '60 ข้อ',
-    duration: '5 นาที 12 วินาที',
-    video: `${VIDEO_BASE_URL}/videos/tgat-1.mp4`,
+    duration: '3 ชั่วโมง 37 นาที',
+    video: `${VIDEO_BASE_URL}/videos/tgat-1/TGAT%20Keys.mp4`,
     poster: '',
     shopUrl: 'https://shopee.co.th/',
     sections: [
@@ -18,17 +18,17 @@ export const tgatData: Record<string, TgatData> = {
         title: 'ส่วนที่ 1 : ทักษะการฟังและการพูด',
         subtitle: '',
         items: [
-          { label: 'ข้อ 1-10', description: 'Question-Response', timestamp: 0 },
-          { label: 'ข้อ 11-20', description: 'Short Conversations', timestamp: 3 },
-          { label: 'ข้อ 21-30', description: 'Long Conversations', timestamp: 5 }
+          { label: 'ข้อ 1-10', description: 'Question-Response', timestamp: 60 },
+          { label: 'ข้อ 11-20', description: 'Short Conversations', timestamp: 1800 },
+          { label: 'ข้อ 21-30', description: 'Long Conversations', timestamp: 3600 }
         ]
       },
       {
         title: 'ส่วนที่ 2 : ทักษะการอ่าน',
         subtitle: '',
         items: [
-          { label: 'ข้อ 31-45', description: 'Text Completion', timestamp: 7 },
-          { label: 'ข้อ 46-60', description: 'Reading Comprehension', timestamp: 9 }
+          { label: 'ข้อ 31-45', description: 'Text Completion', timestamp: 4860 },
+          { label: 'ข้อ 46-60', description: 'Reading Comprehension', timestamp: 9660 }
         ]
       }
     ]
@@ -40,7 +40,7 @@ export const tgatData: Record<string, TgatData> = {
     setNumber: '04',
     questionCount: '80 ข้อ',
     duration: '5 นาที 12 วินาที',
-    video: '/videos/tgat-2.mp4',
+    video: `${VIDEO_BASE_URL}/videos/tgat-2.mp4`,
     poster: '',
     sections: [
       {
@@ -61,7 +61,7 @@ export const tgatData: Record<string, TgatData> = {
     setNumber: '04',
     questionCount: '60 ข้อ',
     duration: '5 นาที 12 วินาที',
-    video: '/videos/tgat-3.mp4',
+    video: `${VIDEO_BASE_URL}/videos/tgat-3.mp4`,
     poster: '',
     shopUrl: 'https://shopee.co.th/',
     sections: [

@@ -35,6 +35,8 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
           className="w-full h-full object-contain bg-black"
           onError={(e) => {
             const target = e.target as HTMLVideoElement;
+            console.error('Video Player Error:', target.error);
+            console.error('Network state:', target.networkState);
             target.style.display = 'none';
             
             const fallback = target.nextElementSibling as HTMLElement;
