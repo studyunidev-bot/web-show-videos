@@ -15,7 +15,7 @@ export const tgatData: Record<string, TgatData> = {
     shopUrl: 'https://shopee.co.th/',
     sections: [
       {
-        title: 'ส่วนที่ 1 : ทักษะการฟังและการพูด',
+        title: 'ส่วนที่ 1 : Speaking Skill',
         subtitle: '',
         items: [
           { label: 'ข้อ 1-10', description: 'Question-Response', timestamp: 60 },
@@ -24,7 +24,7 @@ export const tgatData: Record<string, TgatData> = {
         ]
       },
       {
-        title: 'ส่วนที่ 2 : ทักษะการอ่าน',
+        title: 'ส่วนที่ 2 : Reading Skill',
         subtitle: '',
         items: [
           { label: 'ข้อ 31-45', description: 'Text Completion', timestamp: 4860 },
@@ -39,7 +39,7 @@ export const tgatData: Record<string, TgatData> = {
     subjectName: 'การคิดอย่างมีเหตุผล',
     setNumber: '04',
     questionCount: '80 ข้อ',
-    duration: '5 นาที 12 วินาที',
+    duration: '5 ชั่วโมง 17 นาที',
     video: `${VIDEO_BASE_URL}/videos/tgat-2.mp4`,
     poster: '',
     sections: [
@@ -60,7 +60,7 @@ export const tgatData: Record<string, TgatData> = {
     subjectName: 'สมรรถนะการทำงาน',
     setNumber: '04',
     questionCount: '60 ข้อ',
-    duration: '5 นาที 12 วินาที',
+    duration: '2 ชั่วโมง 53 นาที',
     video: `${VIDEO_BASE_URL}/videos/tgat-3.mp4`,
     poster: '',
     shopUrl: 'https://shopee.co.th/',
