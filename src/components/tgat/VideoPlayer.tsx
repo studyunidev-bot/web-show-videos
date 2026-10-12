@@ -51,6 +51,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
           <video
             ref={ref}
             src={formattedSrc}
+            {...({ referrerPolicy: 'no-referrer' } as React.HTMLAttributes<HTMLElement>)}
             controls
             controlsList="nodownload"
             onContextMenu={(e) => e.preventDefault()}
