@@ -9,10 +9,21 @@ interface VideoPlayerProps {
   onEnded?: () => void;
 }
 
+function safeEncodeVideoUrl(url: string): string {
+  if (!url) return '';
+  try {
+    const decoded = decodeURI(url);
+    return encodeURI(decoded).replace(/ /g, '%20');
+  } catch {
+    return encodeURI(url).replace(/ /g, '%20');
+  }
+}
+
 const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
   ({ src, poster, onTimeUpdate, onEnded }, ref) => {
     const isFirstRender = useRef(true);
     const [hasError, setHasError] = useState(false);
+    const formattedSrc = safeEncodeVideoUrl(src);
 
     // Reset error state when src changes
     useEffect(() => {
@@ -26,20 +37,20 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
         return;
       }
 
-      if (ref && typeof ref !== 'function' && ref.current && src) {
+      if (ref && typeof ref !== 'function' && ref.current && formattedSrc) {
         ref.current.load();
         ref.current.play().catch(e => {
           console.log('Autoplay prevented:', e);
         });
       }
-    }, [src, ref]);
+    }, [formattedSrc, ref]);
 
     return (
       <div className="w-full aspect-video bg-black rounded-md overflow-hidden shadow-sm relative group">
-        {src ? (
+        {formattedSrc ? (
           <video
             ref={ref}
-            src={src}
+            src={formattedSrc}
             controls
             controlsList="nodownload"
             onContextMenu={(e) => e.preventDefault()}
@@ -52,8 +63,11 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
             onError={(e) => {
               const video = e.currentTarget;
               if (video.error) {
-                console.error('Video Player Error:', video.error.code, video.error.message);
-                setHasError(true);
+                // Code 1 is MEDIA_ERR_ABORTED (user or script stopped loading previous source)
+                if (video.error.code !== 1) {
+                  console.error('Video Player Error:', video.error.code, video.error.message);
+                  setHasError(true);
+                }
               }
             }}
           >
